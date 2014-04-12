@@ -1,0 +1,15 @@
+LockApp
+
+This is a quick and simple hack I put up in an hour. 
+
+The functionality is pretty basic.
+
+1. It provides a lock screen.
+2. It disables the home and back and other hard keys
+3. It unlocks the phone only if you provide a valid password.
+
+Setup screen is meant to be displayed only first time. You can also setup new password in case you wan to change one.
+Code need to be added while changing password which can check for old password and then allow you to enter new password
+
+I'd love it if you could contribute that portion of the code too.
+
