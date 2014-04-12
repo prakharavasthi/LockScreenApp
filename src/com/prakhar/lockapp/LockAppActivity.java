@@ -11,7 +11,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -76,6 +75,17 @@ public class LockAppActivity extends Activity {
         this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD);
         super.onAttachedToWindow();
     }
+    /*
+     * Fix for displaying the LockScreen for Long Press
+     * */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+    	super.onWindowFocusChanged(hasFocus);
+    	if(!hasFocus) {
+    		Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+    		sendBroadcast(closeDialog);
+    	}
+    }
     
     /*
      * Method to implement action to be carried out when Submit is clicked
@@ -87,16 +97,14 @@ public class LockAppActivity extends Activity {
     	submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {			
-				if (password.getText().toString().equals(OnlyPassword))
-		        {
-				LockAppActivity.this.finish();
+				if (password.getText().toString().equals(OnlyPassword)){
+					LockAppActivity.this.finish();
 		        }
-				else
-				{
-				Toast.makeText(getApplicationContext(), "Incorrect password : " + password.getText().toString(), Toast.LENGTH_SHORT).show();	
+				else{
+					Toast.makeText(getApplicationContext(), "Incorrect password : " + password.getText().toString(), Toast.LENGTH_SHORT).show();	
 				}
-				}
-				}
+			}
+		}
         );
     }
     
