@@ -6,9 +6,9 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="151dp"
+        android:layout_width="221dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="New Password" />
 
     <EditText
         android:id="@+id/editText1"
@@ -21,9 +21,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="338dp"
+        android:layout_width="213dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Confirm Password" />
 
     <EditText
         android:id="@+id/editText2"
@@ -33,9 +33,9 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Button" 
-        android:onClick="setupPassword"/>
+        android:onClick="setupPassword"
+        android:text="Submit" />
 
 </LinearLayout>
