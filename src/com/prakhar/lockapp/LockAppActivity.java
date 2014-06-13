@@ -63,6 +63,14 @@ public class LockAppActivity extends Activity {
 	
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+    	if(keyCode==KeyEvent.KEYCODE_BACK)
+    	{
+    		Log.d("Test", "Back");
+    	}
+    	if(keyCode==KeyEvent.KEYCODE_HOME)
+    	{
+    		Log.d("Test", "HOME");
+    	}
         return false;
     }
     
